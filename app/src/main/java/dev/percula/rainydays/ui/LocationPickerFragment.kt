@@ -62,7 +62,7 @@ class LocationPickerFragment: BottomSheetDialogFragment() {
     private fun useMyLocation(dialog: Dialog) {
         this@LocationPickerFragment.lifecycleScope.launch {
             try {
-                askPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+                askPermission(Manifest.permission.ACCESS_FINE_LOCATION)
 
                 // Now get the location
                 val fusedLocationClient =
@@ -73,11 +73,16 @@ class LocationPickerFragment: BottomSheetDialogFragment() {
                     // Handle no location found
                     if (location == null) {
                         // No previous location stored, get a new one:
+                        val locationRequest = LocationRequest().apply {
+                            numUpdates = 1
+                            priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
+                        }
                         fusedLocationClient.requestLocationUpdates(
-                            LocationRequest(),
+                            locationRequest,
                             object : LocationCallback() {
                                 override fun onLocationResult(locationResult: LocationResult?) {
                                     super.onLocationResult(locationResult)
+                                    fusedLocationClient.removeLocationUpdates(this)
                                     locationResult?.lastLocation?.let {
                                         locationListVM?.findWeatherStation(LatLng(it.latitude, it.longitude))
                                         dialog.dismiss()

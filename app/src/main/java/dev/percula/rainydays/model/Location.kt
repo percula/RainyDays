@@ -4,6 +4,7 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -14,6 +15,7 @@ data class Location(@PrimaryKey var id: String,
                     var longitude: Double? = null): Parcelable {
 
     @Ignore
+    @IgnoredOnParcel
     val summary = "$latitude, $longitude"
 
 }

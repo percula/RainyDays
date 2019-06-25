@@ -8,27 +8,32 @@
     <fragment
             android:id="@+id/locationFragment"
             android:name="dev.percula.rainydays.ui.LocationFragment"
-            android:label="fragment_location_list"
+            android:label="@string/app_name"
             tools:layout="@layout/fragment_location_list">
         <action
                 android:id="@+id/action_locationFragment_to_locationPickerFragment"
                 app:destination="@id/locationPickerFragment"/>
         <action
-                android:id="@+id/action_locationFragment_to_detailFragment"
-                app:destination="@id/detailFragment"/>
+                android:id="@+id/action_locationFragment_to_settingsFragment"
+                app:destination="@id/settingsFragment"/>
     </fragment>
     <dialog
             android:id="@+id/locationPickerFragment"
             android:name="dev.percula.rainydays.ui.LocationPickerFragment"
-            android:label="LocationPickerFragment"
             tools:layout="@layout/fragment_location_picker"/>
     <fragment
             android:id="@+id/detailFragment"
             android:name="dev.percula.rainydays.ui.DetailFragment"
-            android:label="DetailFragment"
             tools:layout="@layout/fragment_detail">
         <argument
                 android:name="location"
                 app:argType="dev.percula.rainydays.model.Location"/>
     </fragment>
+    <action
+            android:id="@+id/action_global_detailFragment"
+            app:destination="@id/detailFragment"/>
+    <fragment
+            android:id="@+id/settingsFragment"
+            android:name="dev.percula.rainydays.ui.SettingsFragment"
+            android:label="SettingsFragment"/>
 </navigation>

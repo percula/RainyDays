@@ -172,7 +172,13 @@ object NetworkAsyncs {
                         val results = body.asList<Map<String, Any?>>()
 
                         results?.map { map ->
-                            Mapper.unmapNullable<RainData>(map)
+                            map.toMutableMap().let { mutableMap ->
+                                // Workaround for missing PRCP values in JSON
+                                if (mutableMap[RainData.Keys.PRCP] == null) {
+                                    mutableMap[RainData.Keys.PRCP] = null
+                                }
+                                Mapper.unmapNullable<RainData>(mutableMap)
+                            }
                         }
                     }
                         ?.onMain { lce.value = LCE.Success(it) }

@@ -19,3 +19,17 @@ object LocalDateSerializer: KSerializer<LocalDate> {
         return encoder.encodeString(obj.format(dateFormatter))
     }
 }
+
+@Serializer(forClass = Double::class)
+object DoubleSerializer: KSerializer<Double> {
+
+    override val descriptor: SerialDescriptor = StringDescriptor
+
+    override fun deserialize(decoder: Decoder): Double {
+        return decoder.decodeString().toDoubleOrNull() ?: 0.0
+    }
+
+    override fun serialize(encoder: Encoder, obj: Double) {
+        return encoder.encodeString(obj.toString())
+    }
+}

@@ -4,13 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import dev.percula.rainydays.R;
+import dev.percula.rainydays.core.LCE;
 import dev.percula.rainydays.viewmodel.LocationListViewModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,10 +45,18 @@ public class LocationFragment extends Fragment {
         LocationAdapter adapter = new LocationAdapter();
         recyclerView.setAdapter(adapter);
 
+        ProgressBar progressBar = view.findViewById(R.id.progress_bar);
 
         if (locationListViewModel != null) {
             locationListViewModel.getFindWeatherStationLD().observe(this, listLCE -> {
-                // TODO: Display loading bar and errors
+                if (listLCE instanceof LCE.Error) {
+                    progressBar.setVisibility(View.GONE);
+                    Snackbar.make(view, ((LCE.Error) listLCE).getMessage(), Snackbar.LENGTH_SHORT).show();
+                } else if (listLCE instanceof LCE.Loading) {
+                    progressBar.setVisibility(View.VISIBLE);
+                } else {
+                    progressBar.setVisibility(View.GONE);
+                }
             });
 
             locationListViewModel.getLocations().observe(this, locations -> {

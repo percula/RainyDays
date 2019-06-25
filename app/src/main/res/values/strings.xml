@@ -15,4 +15,10 @@
     <string name="warning_network_code">A network error occurred: <xliff:g id="code">%1$d</xliff:g></string>
     <string name="warning_no_connection">No connection</string>
     <string name="warning_no_location_found">No location found</string>
+    <string name="warning_location_already_added">Location already added</string>
+    <string name="rain_gauge">rain_gauge</string>
+
+    <!--Settings-->
+    <string name="units_key">units_key</string>
+    <string name="units_label">Metric Units?</string>
 </resources>
