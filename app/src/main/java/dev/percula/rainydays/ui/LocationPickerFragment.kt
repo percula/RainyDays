@@ -125,7 +125,7 @@ class LocationPickerFragment: BottomSheetDialogFragment() {
                 parentFragment?.activity?.let { activity ->
                     val pingBuilder = PingPlacePicker.IntentBuilder()
                     pingBuilder.setAndroidApiKey(getString(R.string.location_api_android))
-                    pingBuilder.setGeolocationApiKey(getString(R.string.location_api_geolocation))
+                    pingBuilder.setGeolocationApiKey(getString(R.string.location_api_geocode))
                     val placeIntent = pingBuilder.build(activity)
 
                     val result = startForResult(placeIntent)
