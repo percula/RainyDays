@@ -1,0 +1,56 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!--Material Design Spec Dimensions:-->
+    <!--Note: Not all of the following dimensions are used. I copy/pasted these from another project I made-->
+
+    <!--Miscellaneous dimensions-->
+    <dimen name="zero">0dp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+
+    <!--List dimensions (https://material.io/guidelines/components/lists.html#lists-specs)-->
+    <dimen name="list_padding">16dp</dimen>
+    <dimen name="list_padding_negative">-16dp</dimen>
+    <dimen name="list_padding_half">8dp</dimen>
+    <dimen name="list_padding_top_bottom">@dimen/list_padding_half</dimen>
+    <dimen name="list_padding_top_bottom_dense">4dp</dimen>
+    <dimen name="list_one_item_height">56dp</dimen>
+    <dimen name="list_one_item_height_dense">48dp</dimen>
+    <dimen name="list_one_item_height_ultra_dense">32dp</dimen>
+    <dimen name="list_two_item_with_icon_height">72dp</dimen>
+    <dimen name="list_two_item_with_icon_height_dense">60dp</dimen>
+    <dimen name="list_three_item_with_icon_height">88dp</dimen>
+    <dimen name="list_three_item_with_icon_height_dense">76dp</dimen>
+    <dimen name="list_three_item_bottom_padding">20dp</dimen>
+    <dimen name="list_item_icon_container_width">56dp</dimen>
+    <dimen name="list_item_avatar_size">40dp</dimen>
+    <dimen name="list_item_icon_size">24dp</dimen>
+    <dimen name="list_item_icon_padding">@dimen/button_padding</dimen>
+    <dimen name="list_item_icon_margin_start">4dp</dimen>
+    <dimen name="list_item_text_left_padding">72dp</dimen>
+    <dimen name="list_item_divider_thickness">1dp</dimen>
+    <dimen name="list_item_primary_text_size">16sp</dimen>
+    <dimen name="list_item_secondary_text_size">14sp</dimen>
+    <dimen name="list_item_dense_text_size">13sp</dimen>
+    <dimen name="list_item_subheader_text_size">14sp</dimen>
+    <dimen name="list_subheader_height">48dp</dimen>
+    <dimen name="list_item_label_text_size">12sp</dimen>
+    <dimen name="list_edit_text_padding">@dimen/list_padding_half</dimen>
+
+    <!--TextView dimensions-->
+    <dimen name="text_view_padding">16dp</dimen>
+
+    <!--EditText dimensions-->
+    <dimen name="edit_text_text_padding">4dp</dimen>
+    <dimen name="edit_text_text_padding_negative">-4dp</dimen>
+    <dimen name="edit_text_text_padding_negative_2">-8dp</dimen>
+
+    <!--Button dimensions-->
+    <dimen name="button_size">48dp</dimen> <!--Clickable area of button-->
+    <dimen name="button_size_dense">36dp</dimen> <!--Clickable area of button-->
+    <dimen name="button_padding">12dp</dimen> <!--Padding between clickable area and icon, assuming 24dp icon-->
+    <dimen name="button_padding_dense">6dp</dimen> <!--Padding between clickable area and icon, assuming 24dp icon-->
+    <dimen name="button_margin">@dimen/list_padding_half</dimen> <!--Margin to left or right of button clickable area-->
+</resources>

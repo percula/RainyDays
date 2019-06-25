@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/locationFragment">
+
+    <fragment
+            android:id="@+id/locationFragment"
+            android:name="dev.percula.rainydays.ui.LocationFragment"
+            android:label="fragment_location_list"
+            tools:layout="@layout/fragment_location_list">
+        <action
+                android:id="@+id/action_locationFragment_to_locationPickerFragment"
+                app:destination="@id/locationPickerFragment"/>
+        <action
+                android:id="@+id/action_locationFragment_to_detailFragment"
+                app:destination="@id/detailFragment"/>
+    </fragment>
+    <dialog
+            android:id="@+id/locationPickerFragment"
+            android:name="dev.percula.rainydays.ui.LocationPickerFragment"
+            android:label="LocationPickerFragment"
+            tools:layout="@layout/fragment_location_picker"/>
+    <fragment
+            android:id="@+id/detailFragment"
+            android:name="dev.percula.rainydays.ui.DetailFragment"
+            android:label="DetailFragment"
+            tools:layout="@layout/fragment_detail">
+        <argument
+                android:name="location"
+                app:argType="dev.percula.rainydays.model.Location"/>
+    </fragment>
+</navigation>

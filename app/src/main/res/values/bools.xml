@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 0.002 USD per each (2.00 USD per 1000) -->
+    <bool name="show_confirmation_photo">false</bool>
+
+    <!-- 0.007 USD per each (7.00 USD per 1000) -->
+    <bool name="show_confirmation_map">false</bool>
+</resources>

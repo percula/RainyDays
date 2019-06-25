@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:name="dev.percula.rainydays.ui.LocationFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".ui.LocationFragment"
+        tools:listitem="@layout/item_location"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/extended_fab_label"
+            android:text="@string/extended_fab_label"
+            app:icon="@drawable/ic_add_black_24dp"
+            app:layout_anchor="@id/recyclerview"
+            app:layout_anchorGravity="bottom|right|end"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
