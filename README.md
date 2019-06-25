@@ -27,3 +27,4 @@ The map place picker requires two Google API keys to work. The app will work wit
 *Note: You will need to enable billing for geocoding (autocomplete) to work more than once.*
 
 [license-link]: https://github.com/percula/RainyDays/blob/master/LICENSE.
+[license-svg]: https://img.shields.io/:license-mit-blue.svg?style=flat
