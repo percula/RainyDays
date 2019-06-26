@@ -1,13 +1,16 @@
 package dev.percula.rainydays;
 
 import dev.percula.rainydays.model.Location;
+import dev.percula.rainydays.model.RainData;
+import org.threeten.bp.LocalDate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class TestData {
 
-    public List<Location> makeLocationTestData() {
+    public static List<Location> makeLocationTestData() {
         // Create some dummy data for testing
         ArrayList<Location> dummyLocations = new ArrayList<Location>();
         dummyLocations.add(new Location(
@@ -43,5 +46,18 @@ public class TestData {
                 -72.82778
         ));
         return dummyLocations;
+    }
+
+    public static List<RainData> makeRainDataTestData() {
+        // Create some dummy data for testing
+        ArrayList<RainData> list = new ArrayList<RainData>();
+        for (int i = 0; i < 100; i++) {
+            list.add(new RainData(
+                    LocalDate.now().minusDays(i),
+                    "USC00068138",
+                    new Random().nextDouble())
+            );
+        }
+        return list;
     }
 }

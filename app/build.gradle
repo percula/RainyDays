@@ -49,6 +49,9 @@ android {
         experimental = true
     }
 
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
 }
 
 dependencies {
@@ -111,7 +114,7 @@ dependencies {
     // Networking
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
     implementation "com.squareup.okhttp3:okhttp:3.14.2"
-    debugImplementation("com.squareup.okhttp3:logging-interceptor:3.14.2")
+    implementation("com.squareup.okhttp3:logging-interceptor:3.14.2")
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
     // JSON<->POJO dependency
@@ -129,6 +132,11 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test:core:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
