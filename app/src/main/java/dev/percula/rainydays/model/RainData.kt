@@ -41,9 +41,9 @@ data class RainData(
 
     fun formattedPrecipitation(context: Context? = null): String {
         return if (PreferenceManager.getDefaultSharedPreferences(context)?.getBoolean(context?.getString(R.string.units_key), false) == true) {
-            "${precipitation ?: 0.0 * 2.54} cm"
+            context?.getString(R.string.rain_data_precipitation, (precipitation ?: 0.0 ) * 2.54, "cm") ?: ""
         } else {
-            "$precipitation inches"
+            context?.getString(R.string.rain_data_precipitation, precipitation, "inches") ?: ""
         }
     }
 

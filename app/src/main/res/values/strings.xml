@@ -20,6 +20,9 @@
     <string name="warning_location_already_added">Location already added</string>
     <string name="rain_gauge">rain_gauge</string>
 
+    <!--Rain Data-->
+    <string name="rain_data_precipitation"><xliff:g id="precipitation">%1$.2f</xliff:g> <xliff:g id="units">%2$s</xliff:g></string>
+
     <!--Settings-->
     <string name="units_key">units_key</string>
     <string name="units_label">Metric Units?</string>
