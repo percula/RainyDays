@@ -7,11 +7,13 @@
     <string name="location_picker_header">Add a new location</string>
     <string name="location_picker_my_location">Use my location</string>
     <string name="location_picker_map">Choose on map</string>
+    <string name="location_picker_samples">Use sample locations</string>
     <string name="location_picker_latitude">Latitude: </string>
     <string name="location_picker_longitude">Longitude: </string>
 
     <!--Warnings-->
     <string name="warning_network">A network error occurred</string>
+    <string name="warning_server">The server experienced an error</string>
     <string name="warning_network_code">A network error occurred: <xliff:g id="code">%1$d</xliff:g></string>
     <string name="warning_no_connection">No connection</string>
     <string name="warning_no_location_found">No location found</string>

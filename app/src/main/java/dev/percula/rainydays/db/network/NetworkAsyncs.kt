@@ -114,8 +114,16 @@ object NetworkAsyncs {
                             }
                     }
                 }
+                    ?.takeIf { it.isNotEmpty() }
                     ?.onMain { lce.value = LCE.Success(it) }
-                    ?: onMain { lce.value = LCE.Error("No stations found") }
+                    ?: onMain {
+                        // As I found out during development, the server is finicky and may not function at all times:
+                        lce.value = if (body[QueryParams.DATA_TYPES]?.asMap<String, Any?>()?.get("sumOfOtherDocCounts") == 0.0) {
+                            LCE.Error(App.app.getString(R.string.warning_server))
+                        } else {
+                            LCE.Error(App.app.getString(R.string.warning_no_location_found))
+                        }
+                    }
             } catch (e: Exception) {
                 Timber.e(e)
                 onMain { lce.value = LCE.Error(e) }

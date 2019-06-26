@@ -55,6 +55,11 @@ class LocationPickerFragment: BottomSheetDialogFragment() {
             usePlacePicker(dialog)
         }
 
+        contentView.findViewById<TextView>(R.id.location_picker_samples)?.setOnClickListener {
+            locationListVM?.useSampleLocations()
+            dialog.dismiss()
+        }
+
         dialog.setContentView(contentView)
     }
 

@@ -10,6 +10,7 @@ import dev.percula.rainydays.db.local.AppDatabase
 import dev.percula.rainydays.db.network.NetworkAsyncs
 import dev.percula.rainydays.db.network.NetworkService
 import dev.percula.rainydays.model.Location
+import dev.percula.rainydays.model.sampleLocations
 import dev.percula.rainydays.ui.App
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,6 +34,16 @@ class LocationListViewModel(application: Application): AndroidViewModel(applicat
         findWeatherStationLocation.value = latlng
     }
 
+    fun useSampleLocations() {
+        viewModelScope.launch(context = Dispatchers.IO) {
+            try {
+                database.locationDao().insertAll(*sampleLocations.toTypedArray())
+            } catch (e: Exception) {
+                Timber.e(e)
+            }
+        }
+    }
+
     private val findWeatherStationLocation = mutableLiveDataOf<LatLng>()
 
     val findWeatherStationLD by lazy {
@@ -40,7 +51,7 @@ class LocationListViewModel(application: Application): AndroidViewModel(applicat
             NetworkAsyncs.fetchStationsAsync(
                 scope = viewModelScope,
                 networkService = networkService,
-                startDate = LocalDate.now().minusDays(7),
+                startDate = LocalDate.now().minusDays(365),
                 endDate = LocalDate.now().minusDays(1),
                 latitude = latLng.latitude,
                 longitude = latLng.longitude
@@ -91,6 +102,8 @@ class LocationListViewModel(application: Application): AndroidViewModel(applicat
         }
     }
 
-    val locations: LiveData<MutableList<Location>> by lazy { database.locationDao().allSync }
+    val locations: LiveData<List<Location>> by lazy {
+        database.locationDao().allSync
+    }
 
 }

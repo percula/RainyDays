@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="location_api_android" translatable="false">INSERT YOUR ANDROID API KEY HERE</string>
-    <string name="location_api_geocode" translatable="false">INSERT YOUR GEOCODING API KEY HERE</string>
+    <string name="location_api_android_dummy" translatable="false">INSERT YOUR ANDROID API KEY HERE</string>
+    <string name="location_api_geocode_dummy" translatable="false">INSERT YOUR GEOCODING API KEY HERE</string>
 </resources>
