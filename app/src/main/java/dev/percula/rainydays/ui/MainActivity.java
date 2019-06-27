@@ -11,20 +11,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import dev.percula.rainydays.R;
-import dev.percula.rainydays.db.network.NetworkService;
-
-import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
-
-    @Inject
-    NetworkService networkService;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ((App) getApplication()).appComponent.inject(MainActivity.this);
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);

@@ -25,6 +25,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 /**
+ * This helper class is copy/pasted from the Androidx repo. They say it will be in the Paging library in the future.
+ *
  * A helper class for {@link androidx.paging.PagedList.BoundaryCallback BoundaryCallback}s and
  * DataSources to help with tracking network requests.
  * <p>
